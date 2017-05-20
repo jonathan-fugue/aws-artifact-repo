@@ -1,0 +1,6 @@
+composition
+
+import ArtifactRepo
+
+repo: ArtifactRepo.new(name: "fugue-artifact-repo")
+
