@@ -2,4 +2,4 @@ composition
 
 import ArtifactRepo
 
-repo: ArtifactRepo.new(name: "asdfRepo")
+repo: ArtifactRepo.new(name: "saboRepo")
