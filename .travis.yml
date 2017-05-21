@@ -1,3 +1,5 @@
+language: bash
+
 matrix:
   include:
     - os: linux
@@ -10,7 +12,7 @@ env:
     - secure: "Q1CyRkFQyx9ZgBopPxD0Fp9YqLHOxRyE5Rkw7WUA9oVDdHOuV0x0xi8Rnwr9n/aiJJR7eSW1DjCIDTTuxYLIlBsjpPmQ8PXhA8X5ltPUd0AvEeedjy0/RpZczcc9sZzgUA9N1rbktaocB1WBNkPbLhE5zE6VtOomwhH0NOk1SP1UKr/4EMCK7LRPOkHWoZNVJLExQnFkBt0vS9LkUMJLSD3J4pm+8d98le/wP/gQZE+a467KIN3vuR7xHGOnywXV6TglIbexOIdyeRcIvbJhJS6p5x8xU7L6rtyydoPrUB6RPWpIWcauEwFsO+QbBy+gUMpgFwxH1yruuyjEUIop/Ew8ymJYyli+ygmzmC/fgiV76iHVZR+FaMplFRcLbkOjLUSYplSJhL17C3ONPYmK2Wszq2L21UoYRjgZAbKvgmSO3OfOzuxySsj+xtjCD14ZCF7OCbYP5hgXccn4BT94mt3l2Mztfu9dKFo9WlP2e+r+Ojj82WL48jjcEl18WfJ/TCebMyZhCuMxfXc48tTecZWqZ0p2ZeemrsuQ0yTEFkM65WsV5VBbMu0x+jhcVSF+pzajKiTqZlzcyQdSqjf8DVIAoH5BV9YDbpdAP+FomuqCWyzSMr5w5eQVtnEBZYc20le7GyKRC9KdU6N824vQ/jhQzspBOc04d5fzgjEyTM0="
 
 before_install:
-  - pip install awscli
+  - sudo pip install awscli
   - aws s3 cp s3://saboRepo/fugue-client_${FUGUE_VERSION}_amd64.deb fugue-cli.deb
 
 install:
