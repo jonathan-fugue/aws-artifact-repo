@@ -6,13 +6,14 @@ import Fugue.AWS as AWS
 
 fun new {
       name: String, 
-      region: Optional<AWS.Region>, 
+      acl: Optional<S3.BucketCannedACL>,
+      region: Optional<AWS.Region>,
       tags: Optional<List<AWS.Tag>>
     } -> S3.Bucket:
   let extraTags: Optional.unpack([],tags)
   S3.Bucket.new {
-    acl: S3.AuthenticatedRead,
     name: name,
+    acl: Optional.unpack(S3.AuthenticatedRead, acl),
     region: Optional.unpack(AWS.Us-east-1, region),
     tags: List.concat([AWS.tag("Name", name)], extraTags)
   }
