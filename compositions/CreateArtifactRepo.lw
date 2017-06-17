@@ -2,4 +2,26 @@ composition
 
 import ArtifactRepo
 
-repo: ArtifactRepo.new(name: "saboRepo")
+repo: ArtifactRepo.new {
+  name: "saboRepo",
+  policy: '{
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Sid": "saboRepo",
+        "Effect": "Allow",
+        "Principal": {
+          "AWS": [
+            "arn:aws:iam::667025317700:root",
+            "arn:aws:iam::562830053417:root",
+            "arn:aws:iam::481494938442:root",
+            "arn:aws:iam::225195660222:root",
+            "arn:aws:iam::303462153582:root"
+          ]
+        },
+        "Action": "s3:*",
+        "Resource": "arn:aws:s3:::saboRepo/*"
+      }
+    ]
+  }',
+}
