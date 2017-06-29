@@ -1,6 +1,6 @@
 composition
 
-import ArtifactRepo
+import ArtifactRepo.ArtifactRepo as ArtifactRepo
 
 repo: ArtifactRepo.new {
   name: "saboRepo",
